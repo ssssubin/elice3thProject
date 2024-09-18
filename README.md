@@ -91,8 +91,8 @@
 
 <img src="/README_img/image-10.png" width="600" height="300"/>
 <img src="/README_img/image-11.png" width="350" height="300"/>
-<img src="/README_img/image-12.png" width="300" height="700"/>
-
+<img src="/README_img/image-12.png" width="200" height="600"/>
+<img src="/README_img/와이파이 웹 페이지.jpg" width="500" height="500"/>
 #### [그래프 데이터]
 
 -    1시간마다 device로부터 온도, 습도, 지습 데이터의 평균치를 받아 DB에 저장하고 하루치와 일주일치 데이터를 보여줌
