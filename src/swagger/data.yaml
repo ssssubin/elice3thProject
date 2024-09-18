@@ -1,0 +1,22 @@
+components:
+     schemas:
+          data:
+               properties:
+                    deviceId:
+                         type: string
+                    deviceName:
+                         type: string
+                    plantName:
+                         type: string
+                    minTemperature:
+                         type: number
+                    maxTemperature:
+                         type: number
+                    minHumidity:
+                         type: number
+                    maxHumidity:
+                         type: number
+                    minSoilMoisture:
+                         type: number
+                    maxSoilMoisture:
+                         type: number

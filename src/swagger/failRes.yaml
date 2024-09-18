@@ -1,0 +1,8 @@
+components:
+     schemas:
+          failRes:
+               properties:
+                    err:
+                         type: string
+                    data:
+                         type: string

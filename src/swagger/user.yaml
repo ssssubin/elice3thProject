@@ -1,0 +1,14 @@
+components:
+     schemas:
+          user:
+               properties:
+                    name:
+                         type: string
+                    email:
+                         type: string
+                    password:
+                         type: string
+                    confirmPassword:
+                         type: string
+                    phoneNumber:
+                         type: string

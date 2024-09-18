@@ -1,0 +1,6 @@
+components:
+     schemas:
+          control:
+               properties:
+                    control:
+                         type: boolean

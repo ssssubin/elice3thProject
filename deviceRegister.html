@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>기기 등록 과정</title>
+     </head>
+     <body style="margin: 0 auto; width: 1024px">
+          <header>
+               <h1 style="text-align: center">[ Device 등록 과정 ]</h1>
+          </header>
+          <main>
+               <h3>1. Device(ESP32): AP 모드 활성화 -> Device 자체 WiFi 생성</h3>
+               <p>
+                    -> 이 때, 사용자는 <strong>'ESP32_'</strong> 뒤에 적힌 기기 ID를 기억한 후, 기기 등록 페이지의
+                    <strong>MAC ADDRESS</strong> 부분에 기입해야 함
+               </p>
+               <div style="display: flex; justify-content: center">
+                    <img
+                         src="/README_img/image-12.png"
+                         alt="ESP32 자체 와이파이 사진"
+                         style="width: 150px; height: 250px"
+                    />
+                    <img src="/README_img/image-11.png" alt="기기 등록 페이지" style="width: 300px; height: 250px" />
+               </div>
+               <h3>2. 사용자가 Device WiFi 연결 시도 -> Device가 생성한 웹 페이지로 접속</h3>
+               <p>
+                    -> WIFI SSID에는 사용자 와이파이의 이름을, WIFI PASSWORD에는 사용자 와이파이 비밀번호를 입력하여
+                    연결
+               </p>
+               <img
+                    src="/README_img/와이파이 웹 페이지.jpg"
+                    alt="와이파이 웹 페이지"
+                    style="width: 250px; height: 250px"
+               />
+               <h3>3. Device는 사용자가 입력한 정보를 받고 사용자의 WIFI와 연결됨</h3>
+               <h3>
+                    4. Device 등록 시, 사용자는 Device의 초기 데이터(기기ID, 기기명, 식물 이름, 온도/습도/지습 범위)
+                    입력하여 등록
+               </h3>
+          </main>
+     </body>
+</html>
