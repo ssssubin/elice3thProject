@@ -35,7 +35,7 @@
 
 ### ✨ 주요 기능
 
-#### [회원가입 기능]
+**[회원가입 기능]** (src/routes/accountRouter.js:83)
 
 -    이름, 이메일. 비밀번호, 전화번호 필수 입력
      -    이메일 조건: 영문자, 숫자, 특수문자로 구성된 로컬 파트 + @ + . + 최소 2글자의 영문자로 구성된 TLD
@@ -43,7 +43,7 @@
 
 <img src="/README_img/image.png" width="400" height="300"/>
 
-#### [로그인 기능]
+**[로그인 기능]** (src/routes/accountRouter.js:250)
 
 -    이메일 & 비밀번호를 DB에 저장된 데이터와 비교 후 일치하는 경우에만 로그인 성공
 -    이메일 기억하기 버튼 누르면 로그인 시, 최근에 로그인한 이메일이 보여짐
@@ -52,7 +52,7 @@
 
 <img src="/README_img/image-1.png" width="400" height="300"/>
 
-#### [마이페이지]
+**[마이페이지]** (src/routes/myPageRouter.js)
 
 -    사용자의 정보 조회 가능(이름, 이메일)
 -    비밀번호 변경 버튼 클릭하여 변경 가능
@@ -63,7 +63,7 @@
 <img src="/README_img/image-5.png" width="300" height="300"/>
 <img src="/README_img/image-6.png" width="300" height="300"/>
 
-#### [이메일 인증/비밀번호 재설정]
+**[이메일 인증/비밀번호 재설정]** (src/routes/authRouter.js)
 
 -    비밀번호 재설정 시, 사용자가 입력한 이메일이 DB에 존재 여부 및 탈퇴 여부 확인 후 이메일로 랜덤한 4자리 인증코드 발송과 동시에 임시 DB에 인증번호 저장 후, 임시 토큰 발급
 
@@ -72,7 +72,7 @@
 <img src="/README_img/image-7.png" width="400" height="300"/>
 <img src="/README_img/image-8.png" width="400" height="300"/>
 
-#### [device 정보 조회/삭제]
+**[device 정보 조회/삭제]** (src/routes/deviceRouter.js)
 
 -    Management 탭 클릭 시, 첫 번째로 등록한 기기 정보가 먼저 보여짐
 -    드롭 다운 버튼 클릭하여 기기 선택 가능
@@ -80,7 +80,7 @@
 
 <img src="/README_img/image-9.png" width="400" height="300"/>
 
-#### [device 등록/변경]
+**[device 등록/변경]** (src/routes/dataRouter.js)
 
 -    main 페이지의 Add Devices 버튼 클릭하면 device를 등록할 수 있는 페이지로 넘어가고 해당 정보 모두 입력하면 deivce 등록 가능
 
@@ -91,18 +91,22 @@
 
 <img src="/README_img/image-10.png" width="600" height="300"/>
 <img src="/README_img/image-11.png" width="350" height="300"/>
-<img src="/README_img/image-12.png" width="200" height="600"/>
+<p align="left">
+<img src="/README_img/image-12.png" width="200" height="600"/>&nbsp&nbsp
 <img src="/README_img/와이파이 웹 페이지.jpg" width="500" height="500"/>
-#### [그래프 데이터]
+</p>
+
+**[그래프 데이터]** (src/routes/dataRouter.js:628) & (src/MQTT/graphData.js)
 
 -    1시간마다 device로부터 온도, 습도, 지습 데이터의 평균치를 받아 DB에 저장하고 하루치와 일주일치 데이터를 보여줌
 -    그래프는 History 탭에서 확인 가능하며, 온도/습도/지습의 데이터를 각각 보여줌
-
-<img src="/README_img/image-13.png" width="300" height="500"/>
-<img src="/README_img/image-14.png" width="300" height="500"/>
+<p align = "left">
+<img src="/README_img/image-13.png" width="300" height="500"/>&nbsp&nbsp
+<img src="/README_img/image-14.png" width="300" height="500"/>&nbsp&nbsp
 <img src="/README_img/image-15.png" width="300" height="500"/>
+</p>
 
-#### [식물 정보 조회]
+**[식물 정보 조회]** (src/routes/checkPlant.js)
 
 -    device로부터 실시간으로 데이터를 받아서 보여줌
 -    devices 탭과 History 탭에서 확인 가능
@@ -111,9 +115,8 @@
 <img src="/README_img/image-17.png" width="800" height="300"/>
 <img src="/README_img/image-16.png" width="400" height="300"/>
 <img src="/README_img/image-18.png" width="800" height="300"/>
-![alt text](image.png)
 
-#### [device 제어]
+**[device 제어]** (src/routes/controlRouter.js)
 
 -    ON/OFF 토글 버튼 사용하여 제어 가능
 -    워터 펌프와 영양분 제어는 숫자(mL) 입력하여 제어 가능
@@ -121,7 +124,7 @@
 <img src="/README_img/image-19.png" width="500" height="200"/>
 <img src="/README_img/image-20.png" width="450" height="200"/>
 
-#### [이상 알림]
+**[이상 알림]** (src/routes/errorControl.js)
 
 -    식물의 온도/습도/지습이 사용자가 설정한 범위를 벗어나면 메일로 알림 전송
 
