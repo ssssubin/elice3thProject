@@ -60,8 +60,10 @@
 -    회원 탈퇴하기 버튼 클릭하고 비밀번호 입력하면 탈퇴 가능
 
 <img src="/README_img/image-4.png" width="600" height="300"/>
-<img src="/README_img/image-5.png" width="300" height="300"/>
+<p align="left">
+<img src="/README_img/image-5.png" width="300" height="300"/>&nbsp&nbsp
 <img src="/README_img/image-6.png" width="300" height="300"/>
+</p>
 
 **[이메일 인증/비밀번호 재설정]** (src/routes/authRouter.js)
 
@@ -69,8 +71,10 @@
 
 -    사용자가 입력한 인증번호와 사용자의 이메일로 보낸 인증번호가 일치하는지 판단 후, 일치한다면, 비밀번호 재설정 가능
 
-<img src="/README_img/image-7.png" width="400" height="300"/>
+<p align ="left">
+<img src="/README_img/image-7.png" width="400" height="300"/>&nbsp&nbsp
 <img src="/README_img/image-8.png" width="400" height="300"/>
+</p>
 
 **[device 정보 조회/삭제]** (src/routes/deviceRouter.js)
 
@@ -92,7 +96,7 @@
 <img src="/README_img/image-10.png" width="600" height="300"/>
 <img src="/README_img/image-11.png" width="350" height="300"/>
 <p align="left">
-<img src="/README_img/image-12.png" width="200" height="600"/>&nbsp&nbsp
+<img src="/README_img/image-12.png" width="300" height="500"/>&nbsp&nbsp
 <img src="/README_img/와이파이 웹 페이지.jpg" width="500" height="500"/>
 </p>
 
@@ -100,6 +104,7 @@
 
 -    1시간마다 device로부터 온도, 습도, 지습 데이터의 평균치를 받아 DB에 저장하고 하루치와 일주일치 데이터를 보여줌
 -    그래프는 History 탭에서 확인 가능하며, 온도/습도/지습의 데이터를 각각 보여줌
+
 <p align = "left">
 <img src="/README_img/image-13.png" width="300" height="500"/>&nbsp&nbsp
 <img src="/README_img/image-14.png" width="300" height="500"/>&nbsp&nbsp
@@ -121,8 +126,10 @@
 -    ON/OFF 토글 버튼 사용하여 제어 가능
 -    워터 펌프와 영양분 제어는 숫자(mL) 입력하여 제어 가능
 
-<img src="/README_img/image-19.png" width="500" height="200"/>
+<p align="left">
+<img src="/README_img/image-19.png" width="600" height="200"/>
 <img src="/README_img/image-20.png" width="450" height="200"/>
+</p>
 
 **[이상 알림]** (src/routes/errorControl.js)
 
