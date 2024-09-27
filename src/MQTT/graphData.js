@@ -18,7 +18,7 @@ const graphData = async (topic, message) => {
                     soilMoisture === null ||
                     soilMoisture === undefined
                ) {
-                    const err = new Error("기기로부터 그래프 데이터를 가져오는데 실패했습니다.");
+                    const err = new Error("잘못된 데이터가 기기로부터 전송되고 있습니다.");
                     err.statusCode = 500;
                     throw err;
                }
@@ -32,7 +32,7 @@ const graphData = async (topic, message) => {
                ) {
                     const err = new Error("잘못된 값이 기기로부터 전송되고 있습니다.");
                     err.statusCode = 500;
-                    return next(err);
+                    throw err;
                }
 
                const foundDevice = await DefaultData.findOne({ deviceId }).lean();
@@ -48,8 +48,7 @@ const graphData = async (topic, message) => {
                });
           }
      } catch (e) {
-          console.error(e);
-          const err = new Error("기기로부터 그래프 데이터를 가져오는데 실패했습니다.");
+          const err = new Error("기기로부터 그래프 데이터를 가져오는데 실패했습니다.", { cause: e });
           err.statusCode = 500;
           throw err;
      }
