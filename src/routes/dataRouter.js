@@ -207,6 +207,13 @@ router.post("/default", async (req, res, next) => {
                maxSoilMoisture,
           };
 
+          // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
+          const timer = setTimeout(() => {
+               const err = new Error("기기로 데이터를 보내는데 시간이 오래 걸려 중단하였습니다. 다시 시도해주세요.");
+               err.statusCode = 408; // timeout
+               next(err);
+          }, 5000);
+
           const errors = await Promise.all([
                // 디바이스에게 온도 데이터 전송
                client.publishAsync(temperatureTopic, JSON.stringify(temperatureData), { qos: 1 }).catch((e) => {
@@ -241,13 +248,6 @@ router.post("/default", async (req, res, next) => {
                aggregatedError.statusCode = 500;
                next(aggregatedError);
           }
-
-          // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
-          const timer = setTimeout(() => {
-               const err = new Error("기기로 데이터를 보내는데 시간이 오래 걸려 중단하였습니다. 다시 시도해주세요.");
-               err.statusCode = 408; // timeout
-               next(err);
-          }, 5000);
 
           await DefaultData.create({
                email,
@@ -476,6 +476,13 @@ router.put("/default/:deviceName", async (req, res, next) => {
                maxSoilMoisture,
           };
 
+          // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
+          const timer = setTimeout(() => {
+               const err = new Error("기기로 데이터를 보내는데 시간이 오래 걸려 중단하였습니다. 다시 시도해주세요.");
+               err.statusCode = 408; // timeout
+               next(err);
+          }, 5000);
+
           const errors = await Promise.all([
                // 디바이스에게 온도 데이터 전송
                client.publishAsync(temperatureModifyTopic, JSON.stringify(temperatureData), { qos: 1 }).catch((e) => {
@@ -510,13 +517,6 @@ router.put("/default/:deviceName", async (req, res, next) => {
                aggregatedError.statusCode = 500;
                next(aggregatedError);
           }
-
-          // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
-          const timer = setTimeout(() => {
-               const err = new Error("기기로 데이터를 보내는데 시간이 오래 걸려 중단하였습니다. 다시 시도해주세요.");
-               err.statusCode = 408; // timeout
-               next(err);
-          }, 5000);
 
           const updateData = await DefaultData.updateOne(
                { deviceId: foundDevice.deviceId },

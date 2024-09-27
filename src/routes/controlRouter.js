@@ -133,13 +133,6 @@ router.post("/dcpan/:deviceName", async (req, res, next) => {
 
           // 디바이스에게 control값을 보냄
           const message = { deviceId: findData.deviceId, control };
-          // qos를 1로 설정하여 보내, puback을 받을 수 있도록 함
-          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
-               console.error(e);
-               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
-               err.statusCode = 500;
-               next(err);
-          });
 
           // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
           const timer = setTimeout(() => {
@@ -147,6 +140,14 @@ router.post("/dcpan/:deviceName", async (req, res, next) => {
                err.statusCode = 408; // timeout
                next(err);
           }, 5000);
+
+          // qos를 1로 설정하여 보내, puback을 받을 수 있도록 함
+          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
+               console.error(e);
+               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
+               err.statusCode = 500;
+               next(err);
+          });
 
           res.status(200).json({ err: null, data: { control } });
           clearTimeout(timer);
@@ -284,12 +285,6 @@ router.post("/heater/:deviceName", async (req, res, next) => {
 
           // 디바이스에게 control값을 보냄
           const message = { deviceId: findData.deviceId, control };
-          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
-               console.error(e);
-               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
-               err.statusCode = 500;
-               next(err);
-          });
 
           // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
           const timer = setTimeout(() => {
@@ -297,6 +292,13 @@ router.post("/heater/:deviceName", async (req, res, next) => {
                err.statusCode = 408; // timeout
                next(err);
           }, 5000);
+
+          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
+               console.error(e);
+               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
+               err.statusCode = 500;
+               next(err);
+          });
 
           res.status(200).json({ err: null, data: { control } });
           clearTimeout(timer);
@@ -435,12 +437,6 @@ router.post("/humidifier/:deviceName", async (req, res, next) => {
 
           // 디바이스에게 control값을 보냄
           const message = { deviceId: findData.deviceId, control };
-          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
-               console.error(e);
-               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
-               err.statusCode = 500;
-               next(err);
-          });
 
           // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
           const timer = setTimeout(() => {
@@ -448,6 +444,13 @@ router.post("/humidifier/:deviceName", async (req, res, next) => {
                err.statusCode = 408; // timeout
                next(err);
           }, 5000);
+
+          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
+               console.error(e);
+               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
+               err.statusCode = 500;
+               next(err);
+          });
 
           res.status(200).json({ err: null, data: { control } });
           clearTimeout(timer);
@@ -587,12 +590,6 @@ router.post("/nutrient/:deviceName", async (req, res, next) => {
 
           // 디바이스에게 영양분값을 보냄
           const message = { deviceId: findData.deviceId, nutrient };
-          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
-               console.error(e);
-               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
-               err.statusCode = 500;
-               next(err);
-          });
 
           // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
           const timer = setTimeout(() => {
@@ -600,6 +597,13 @@ router.post("/nutrient/:deviceName", async (req, res, next) => {
                err.statusCode = 408; // timeout
                next(err);
           }, 5000);
+
+          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
+               console.error(e);
+               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
+               err.statusCode = 500;
+               next(err);
+          });
 
           res.status(200).json({ err: null, data: { nutrient } });
           clearTimeout(timer);
@@ -745,12 +749,6 @@ router.post("/pump/:deviceName", async (req, res, next) => {
 
           // 디바이스에게 control값을 보냄
           const message = { deviceId: findData.deviceId, water };
-          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
-               console.error(e);
-               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
-               err.statusCode = 500;
-               next(err);
-          });
 
           // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
           const timer = setTimeout(() => {
@@ -758,6 +756,13 @@ router.post("/pump/:deviceName", async (req, res, next) => {
                err.statusCode = 408; // timeout
                next(err);
           }, 5000);
+
+          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
+               console.error(e);
+               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
+               err.statusCode = 500;
+               next(err);
+          });
 
           res.status(200).json({ err: null, data: { water } });
           clearTimeout(timer);
@@ -895,12 +900,6 @@ router.post("/lighting/:deviceName", async (req, res, next) => {
 
           // 디바이스에게 control값을 보냄
           const message = { deviceId: findData.deviceId, control };
-          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
-               console.error(e);
-               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
-               err.statusCode = 500;
-               next(err);
-          });
 
           // 디바이스로 데이터를 보낼 때 5초가 초과되면 err 보냄
           const timer = setTimeout(() => {
@@ -908,6 +907,13 @@ router.post("/lighting/:deviceName", async (req, res, next) => {
                err.statusCode = 408; // timeout
                next(err);
           }, 5000);
+
+          await client.publishAsync(reqTopic, JSON.stringify(message), { qos: 1 }).catch((e) => {
+               console.error(e);
+               const err = new Error("기기로 데이터를 보내는 과정에서 오류가 발생했습니다. 다시 시도해주세요.");
+               err.statusCode = 500;
+               next(err);
+          });
 
           res.status(200).json({ err: null, data: { control } });
           clearTimeout(timer);

@@ -274,7 +274,7 @@ router.delete("/:deviceName", async (req, res, next) => {
      try {
           const { deviceName } = req.params;
           const email = res.locals.user.email;
-          const foundDevice = await DefaultData.findOne({ email, deviceName }).lean();
+          const foundDevice = await DefaultData.findOne({ email, deviceName }).session(session);
 
           if (foundDevice === null || foundDevice === undefined) {
                const err = new Error("해당 기기를 찾을 수 없습니다.");
@@ -289,7 +289,6 @@ router.delete("/:deviceName", async (req, res, next) => {
           }
 
           // 초기 데이터 및 그래프 데이터 삭제
-
           await DefaultData.deleteMany({ email, deviceName }).session(session);
           await GraphData.deleteMany({ email, deviceName }).session(session);
 
