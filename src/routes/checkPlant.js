@@ -223,10 +223,12 @@ router.get("/realtime", async (req, res, next) => {
                } finally {
                     isSubscribe = false;
                     clearTimeout(timeout);
+                    client.removeListener("message", mqttEventListener);
                }
           } else {
                isSubscribe = false;
                clearTimeout(timeout);
+               client.removeListener("message", mqttEventListener);
                const error = new Error("등록되지 않은 기기입니다.");
                error.statusCode = 400;
                return next(error);
