@@ -137,7 +137,7 @@
 
 <img src="/README_img/image-21.png" width="400" height="200"/>
 
-**[배포 주소]**
+#### [배포 주소]
 http://34.64.78.252/
-ID: cdw3521@naver.com
-PW : test1234!
+- ID: cdw3521@naver.com
+- PW : test1234!
