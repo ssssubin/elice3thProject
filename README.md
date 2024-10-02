@@ -136,3 +136,8 @@
 -    식물의 온도/습도/지습이 사용자가 설정한 범위를 벗어나면 메일로 알림 전송
 
 <img src="/README_img/image-21.png" width="400" height="200"/>
+
+**[배포 주소]**
+http://34.64.78.252/
+ID: cdw3521@naver.com
+PW : test1234!
