@@ -141,3 +141,6 @@
 http://34.64.78.252/
 - ID: cdw3521@naver.com
 - PW : test1234!
+
+#### [Smart Farm API 문서]
+http://34.64.78.252/api-docs
